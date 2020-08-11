@@ -2,7 +2,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li> <%= task.completed == true ? "[V]" : "[ ]" %>
+    <li> <%= task.completed ?  "[V]" : "[]" %>
       <label for="task"><%= link_to task.title, task_path(task) %>  <%= link_to "   X", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></label>
       </li>
   <% end %>
